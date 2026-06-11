@@ -55,7 +55,7 @@ class CaptureOverseasTaxIdentifierController @Inject() (mcc: MessagesControllerC
               journeyId  = journeyId,
               pageConfig = journeyConfig.pageConfig,
               formAction = routes.CaptureOverseasTaxIdentifierController.submit(journeyId),
-              form       = CaptureOverseasTaxIdentifierForm.form.fill(storedOverseasTaxId)
+              form       = storedOverseasTaxId.fold(CaptureOverseasTaxIdentifierForm.form)(id => CaptureOverseasTaxIdentifierForm.form.fill(Some(id)))
             )
           )
         }

@@ -48,13 +48,13 @@ class CaptureStoredAnswersControllerSpec
   private val mockAuthConnector: AuthConnector = mock[AuthConnector]
 
   private val pageConfig = PageConfig(
-    optServiceName        = Some(testServiceName),
-    deskProServiceId      = "test-service-id",
-    signOutUrl            = testSignOutUrl,
-    enableSautrCheck      = true,
-    accessibilityUrl      = testAccessibilityUrl,
-    optFullNamePageLabel  = None,
-    labels                = None
+    optServiceName       = Some(testServiceName),
+    deskProServiceId     = "test-service-id",
+    signOutUrl           = testSignOutUrl,
+    enableSautrCheck     = true,
+    accessibilityUrl     = testAccessibilityUrl,
+    optFullNamePageLabel = None,
+    labels               = None
   )
 
   private val journeyConfig = JourneyConfig(
@@ -67,8 +67,8 @@ class CaptureStoredAnswersControllerSpec
   private lazy val app: Application =
     new GuiceApplicationBuilder()
       .configure(
-        "metrics.enabled" -> false,
-        "metrics.jvm" -> false,
+        "metrics.enabled"                       -> false,
+        "metrics.jvm"                           -> false,
         "microservice.metrics.graphite.enabled" -> false
       )
       .overrides(
